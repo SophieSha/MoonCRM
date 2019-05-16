@@ -1,40 +1,38 @@
 <style type="text/css">
+    .topbar {
+        left: 180px;
+    }
 
-.topbar {
-    left: 180px;
-  }
+    .navbar-custom {
+        background-color: #2C2F33;
+    }
 
-.navbar-custom {
-    background-color:#2C2F33;
-  }
+    .form-control {
+        background-color: #f5f5f5;
+    }
 
-  .form-control {
-    background-color: #f5f5f5;
-  }
+    .btn {
+        color: #707070;
+        font-size: 1.5rem;
+    }
 
-  .btn{
-      color: #707070;
-      font-size: 1.5rem;
-  }
-
-  .notification-list .noti-icon-badge {
-    display: inline-block;
-    position: absolute;
-    top: 38px;
-    right: 8px;
-    border: 1px;
-    border-radius: 50%;
-    width: 8px;
-    height: 11px;
-}
-
+    .notification-list .noti-icon-badge {
+        display: inline-block;
+        position: absolute;
+        top: 38px;
+        right: 8px;
+        border: 1px;
+        border-radius: 50%;
+        width: 8px;
+        height: 11px;
+    }
 </style>
 
 
 
 
 <!-- Top Bar Start -->
-<div class="topbar" >
+<div class="topbar">
 
 
     <nav class="navbar-custom">
