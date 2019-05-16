@@ -41,27 +41,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     <!-- Page specific css/style, it has more priority than other linked css, if you have a few small 
     page specific styles you can add them here-->
-    
+
     <style type="text/css">
+        .content-page {
+            margin-left: 180px;
+            overflow: hidden;
+        }
 
-.content-page {
-    margin-left: 180px;
-    overflow: hidden;
-  }
-
-.page-content-wrapper {
-    margin: 0 -10px;
-    padding-top: 100px;
-  }
-
-
-.fixed-left{
-
-}
-
-
+        .page-content-wrapper {
+            margin: 0 -10px;
+            padding-top: 100px;
+        }
     </style>
-
 
 </head>
 
@@ -117,11 +108,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-    
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
     <script src="public/assets/js/modernizr.min.js"></script>
     <script src="public/assets/js/jquery.slimscroll.js"></script>
     <script src="public/assets/js/jquery.nicescroll.js"></script>
