@@ -13,7 +13,7 @@
   }
 
   .side-menu .topbar-left {
-    padding: 20px;
+    padding: 15px;
     width: 180px;
 
   }
@@ -41,7 +41,7 @@
     display: inline-block;
     font-size: 16px;
     line-height: 17px;
-    margin-left: 3px;
+    margin-left: 15px;
     margin-right: 8px;
     text-align: center;
     vertical-align: middle;
@@ -56,10 +56,6 @@
   }
 </style>
 
-
-
-
-
 <!-- ========== Left Sidebar Start ========== -->
 <div class="left side-menu">
 
@@ -68,7 +64,7 @@
   <div class="topbar-left">
     <h2 class="title"><a href="home.php" style="color: #FED766;"> MoonCRM </a></h2>
     <div class="" style="text-align: center">
-      <a href="home.php" class="logo"><img src="public/assets/images/mooncrm-Logo.png" height="50" alt="logo"></a>
+      <a href="home.php" class="logo"><img src="public/assets/images/mooncrm-Logo.png" height="55" alt="logo"></a>
     </div>
   </div>
 
