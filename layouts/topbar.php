@@ -14,17 +14,58 @@
     .btn {
         color: #707070;
         font-size: 1.5rem;
+        padding: 0;
+        line-height: 0;
+
     }
 
     .notification-list .noti-icon-badge {
         display: inline-block;
         position: absolute;
-        top: 38px;
+        top: 15px;
         right: 8px;
         border: 1px;
         border-radius: 50%;
         width: 8px;
         height: 11px;
+    }
+
+    .button-menu-mobile {
+        background-color: #f5f5f5;
+        font-size: 20px;
+        width: 32px;
+        border-radius: 1px;
+        line-height: 30px;
+    }
+
+    .navbar-custom .dropdown.show .nav-link {
+        background-color: #2C2F33;
+    }
+
+    .notification-list .nav-link {
+        line-height: 20px;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-bottom: 0;
+    }
+
+
+    .form-control {
+        height: calc(1em + .9rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 100;
+        line-height: 1.5;
+        color: #707070;
+        background-color: #2C2F33;
+        border: 0.5px solid #707070;
+    }
+
+    .ml-5 {
+        margin-left: 1rem !important;
     }
 </style>
 
@@ -44,8 +85,12 @@
                 <button type="button" class="button-menu-mobile open-left">
                     <i class="ion-navicon"></i>
                 </button>
+            </li>
 
         </ul>
+
+
+
 
         <!-- Search -->
 
@@ -59,6 +104,8 @@
                     <i class="mdi mdi-magnify" aria-hidden="true"></i>
                 </button>
             </li>
+            <li class="hide-phone list-inline-item app-search">
+
         </ul>
 
 

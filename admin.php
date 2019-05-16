@@ -45,20 +45,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <style type="text/css">
         .content-page {
             margin-left: 180px;
-            overflow: hidden;
-        }
-
-        .page-content-wrapper {
-            margin: 0 -10px;
-            padding-top: 100px;
         }
     </style>
+
 
 </head>
 
 
 
-<body class="fixed-left">
+<body class="fixed-left" style="overflow: visible;">
 
 
     <!-- Begin page -->
@@ -117,9 +112,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <script src="public/assets/js/jquery.slimscroll.js"></script>
     <script src="public/assets/js/jquery.nicescroll.js"></script>
     <script src="public/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="public/assets/pages/dashboard.js"></script>
+    <script src="public/assets/js/app.js"></script>
+
 
     <!-- Add Extra JS below-->
-
 
 
     <!-- Add Plugins below-->
