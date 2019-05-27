@@ -1,12 +1,14 @@
 <?php
-// Initialize the session
-session_start();
+// // Initialize the session
+// session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
-    exit;
-}
+// // Check if the user is logged in, if not then redirect him to login page
+// if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+//     header("location: login.php");
+//     exit;
+// }
+
+require_once 'config.php';
 ?>
 
 
@@ -71,20 +73,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <!-- ==================
                          PAGE CONTENT START
                          ================== -->
+                <h1> Admin</h1>
+                <p>Card selection</p>
+                <?php
+                $stmt = $conn->prepare('select * from card');
+                $stmt->execute();
+                $cards = $stmt->fetchAll();
 
-
+                foreach ($cards as $card) {
+                    include 'layouts/adminCard.php';
+                }
+                ?>
                 <div class="page-content-wrapper">
 
                     <div class="container-fluid">
-
-
-
-
-
-
-
-
-
 
 
                     </div><!-- container -->

@@ -1,21 +1,18 @@
+<!-- Generic config file to connect to XAMPP's MySQL database -->
+
 <?php
-//Code reference： https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+$servername = "localhost";
+$db = "mooncrm";
+$username = "root";
+$password = "";
 
-
-
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'mysql');
- 
-/* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-?>
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    ?>
