@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 //Code reference： https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
 
 
@@ -155,4 +155,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>  
 
 </body>
-</html> -->
+</html>
