@@ -62,8 +62,7 @@ if (isset($_POST['submit']))
 		// then you get the data line by line
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 		{
-			$sql = "INSERT into customer(cust_no,first_name,last_name,email,phone,address,city,postcode,country) 
-            values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]','$data[8]')";
+			$sql = "INSERT into customer(customerID,name,email,phone) values('$data[0]','$data[1]','$data[2]','$data[3]')";
 			mysqli_query($con,$sql);
 			
 			
@@ -204,9 +203,7 @@ if (isset($_POST['submit']))
 ?>
 
 
-                        <!-- ==================
-                         displays existing data from mysql						 
-                         ================== -->
+
 <form method="post" action="export.php">
      <input type="submit" name="export" class="btn btn-success" value="Export" />
     </form>
@@ -217,15 +214,10 @@ if (isset($_POST['submit']))
                             <div class="table-responsive" id="employee_table">  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="5%">Customer ID</th>  
-                               <th width="10%">First Name</th>  
-                               <th width="10%">Last Name</th>  
-                               <th width="10%">Email</th>  
+                               <th width="5%">customerID</th>  
+                               <th width="20%">Name</th>  
+                               <th width="20%">Email</th>  
                                <th width="10%">Phone</th>  
-                               <th width="10%">Address</th>  
-                               <th width="10%">City</th>  
-                               <th width="10%">Post Code</th>  
-                               <th width="10%">Country</th>  
                           </tr> 
                             
 
@@ -237,15 +229,10 @@ if (isset($_POST['submit']))
                      {  
                      ?>  
                           <tr>  
-                               <td><?php echo $row['cust_no']; ?></td>  
-                               <td><?php echo $row['first_name']; ?></td>  
-                               <td><?php echo $row['last_name']; ?></td>  
+                               <td><?php echo $row['customerID']; ?></td>  
+                               <td><?php echo $row['name']; ?></td>  
                                <td><?php echo $row['email']; ?></td>  
                                <td><?php echo $row['phone']; ?></td>  
-                               <td><?php echo $row['address']; ?></td>  
-                               <td><?php echo $row['city']; ?></td>  
-                               <td><?php echo $row['postcode']; ?></td>  
-                               <td><?php echo $row['country']; ?></td>  
                           </tr>  
                      <?php       
                      }
@@ -256,55 +243,99 @@ if (isset($_POST['submit']))
                      </table>
 
 
-                     
-                    <!-- export button referecing to hopefullyWorking.php -->
-                     <a href="hopefullyWorking.php" target="_blank">Download customer data</a>
 
 
-                     <!-- <input type="submit" name="dbToCSV" value="Export Database to CSV" <?php if     (isset($_GET['dbToCSV']))
-                    {
-                        $SEquery = "SELECT * FROM customer";
-                        $resultE = mysqli_query($con, $SEquery);
 
-                        $number_of_fields = mysqli_num_fields($resultE);
-                        $headers = array();
-                        for ($i = 0; $i < $number_of_fields; $i++) {
-                            $headers[] = mysqli_field_name($resultE , $i);
+
+
+
+
+
+
+
+
+
+
+
+                     <div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Members list
+            <a href="exportData.php" class="btn btn-success pull-right">Export Members</a>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                      <th>CustomerID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+
+                    
+                    //get records from database
+                    $Squery = "SELECT * FROM customer;";
+                    if($Squery->num_rows > 0){ 
+                        while($row = $Squery->fetch_assoc()){ ?>                
+                    <tr>
+                      <td><?php echo $row['customerID']; ?></td>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['email']; ?></td>
+                      <td><?php echo $row['phone']; ?></td>
+                    </tr>
+                    <?php } }else{ ?>
+                    <tr><td colspan="5">No member(s) found.....</td></tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+                     <?php
+                    
+                    //get records from database
+                    $Squery = "SELECT * FROM customer;";
+
+                    if($Squery->num_rows > 0){
+                        $delimiter = ",";
+                        $filename = "members_" . date('Y-m-d') . ".csv";
+                        
+                        //create a file pointer
+                        $f = fopen('php://memory', 'w');
+                        
+                        //set column headers
+                        $fields = array('CustomerID', 'Name', 'Email', 'Phone');
+                        fputcsv($f, $fields, $delimiter);
+                        
+                        //output each row of the data, format line as csv and write to file pointer
+                        while($row = $query->fetch_assoc()){
+                            
+                            $lineData = array($row['customerID'], $row['name'], $row['email'], $row['phone']);
+                            fputcsv($f, $lineData, $delimiter);
                         }
-                        $fp = fopen('php://output', 'w');
-                        if ($fp && $resultE) {
-                            header('Content-Type: text/csv');
-                            header('Content-Disposition: attachment; filename="export.csv"');
-                            header('Pragma: no-cache');
-                            header('Expires: 0');
-                            fputcsv($fp, $headers);
-                            while ($row = $resultE->fetch_array(MYSQLI_NUM)) {
-                                fputcsv($fp, array_values($row));
-                            }
-                            die;
-                        }
-
-                        function mysqli_field_name($resultE, $field_offset)
-                        {
-                            $properties = mysqli_fetch_field_direct($resultE, $field_offset);
-                            return is_object($properties) ? $properties->name : null;
-                        }
+                        
+                        //move back to beginning of file
+                        fseek($f, 0);
+                        
+                        //set headers to download file rather than displayed
+                        header('Content-Type: text/csv');
+                        header('Content-Disposition: attachment; filename="' . $filename . '";');
+                        
+                        //output all remaining data on a file pointer
+                        fpassthru($f);
                     }
-                    else
-                    {
-                        echo "Error!";
-                    } ?>><br /> -->
+                    exit;
 
-
-
-
-
-
-
-
-
-
-                     
+                    ?>
 
 
                     
@@ -319,7 +350,7 @@ if (isset($_POST['submit']))
 
 
 
-                    <div class="page-content-wrapper">
+                <div class="page-content-wrapper">
 
                     <div class="container-fluid">
 
