@@ -27,6 +27,23 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <style  type="text/css">
 
+.butn {
+  -webkit-border-radius: 6 !important;
+  -moz-border-radius: 6 !important;
+  border-radius: 6px;
+  font-family: Roboto;
+  color: #FED766 !important;
+  font-size: 20px;
+  background: #2C2F33 !important;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #434a52 !important ;
+  
+}
+
 /* Remove margins and padding from the list */
 ul.todolist {
   list-style-type: none;
@@ -122,8 +139,8 @@ input {
 .addBtn {
   padding: 10px;
   width: 25%;
-  background: #d9d9d9;
-  color: #555;
+  background: #2C2F33;
+  color: #FED766;
   float: left;
   text-align: center;
   font-size: 16px;
@@ -133,7 +150,7 @@ input {
 }
 
 .addBtn:hover {
-  background-color: #bbb;
+  background-color: #434a52;
 }
 
 </style>
@@ -193,62 +210,82 @@ input {
 
 
 
-                        <div class="row">
+                    <div class="row">
 
-                            <div class="col-md-6 col-xl-4">
-                                <div class="mini-stat clearfix bg-white">
-                                   <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:150px;width:100px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:300px;}</style></div>
-                                </div>
-                            </div>
+<div class="col-md-6 col-xl-4">
+    <div class="mini-stat clearfix bg-white">
+       <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=Melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> </div><style>.mapouter{position:relative;text-align:right;height:150px;width:100px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:300px;}</style></div>
+    </div>
+</div>
 
-                            <div class="col-md-6 col-xl-4">
-                                <div class="mini-stat clearfix bg-white">
-                                  
-
-
+<div class="col-md-6 col-xl-4">
+    <div class="mini-stat clearfix bg-white">
+      
 
 
-                           
-  <h5>To Do List</h5>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
+
+
+
+<h5>To Do List</h5>
+<input type="text" id="myInput" placeholder="Title...">
+<span onclick="newElement()" class="addBtn">Add</span>
 
 <br>
 <br>
 <br>
 <ul id="myUL" class="todolist">
-  <li class="listitem">Hit the gym</li>
-  <li class="listitem">Pay bills</li>
-  <li class="listitem">Meet George</li>
-  <li class="listitem">Buy eggs</li>
-  <li class="listitem">Read a book</li>
-  <li class="listitem">Organize office</li>
+<li class="listitem">Call Jane</li>
+<li class="listitem">Pay invoices</li>
+<li class="listitem">Meet George</li>
+<li class="listitem">Sell TV</li>
+<li class="listitem">Read a book</li>
+<li class="listitem">Organize office</li>
 </ul>
 
 
 
-                                  
+      
 
 
 
-                                    <div class="clearfix"></div>
-                                    <p class=" mb-0 m-t-20 text-muted">x<span class="pull-right">y</span></p>
-                                </div>
-                            </div>
+        <div class="clearfix"></div>
+        <p class=" mb-0 m-t-20 text-muted"><span class="pull-right"></span></p>
+    </div>
+</div>
 
-                            <div class="col-md-6 col-xl-4">
-                                <div class="mini-stat clearfix bg-white">
-                                    <div class="mini-stat-info">
-                                        <span class="counter text-black">xxx</span>
-                                        ?
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <p class=" mb-0 m-t-20 text-muted">x<span class="pull-right">y</span></p>
-                                </div>
-                            </div>
+<div class="col-md-6 col-xl-4">
+    <div class="mini-stat clearfix bg-white">
+        <div class="mini-stat-info">
+            <span class="counter text-black">Add a widget here!</span>
+            
+        </div>
+        <div class="clearfix"></div>
+        <p class=" mb-0 m-t-20 text-muted">Or here!<span class="pull-right">Not here though.</span></p>
+    </div>
+</div>
 
-                        </div>
-                        <!-- end first row -->
+</div>
+<!-- end first row -->
+<div class="row">
+<div class="col-md-6 col-xl-4">
+<form class="widgetcheck">
+
+<input type="checkbox" name="widget1" value="Map">
+</form>
+</div>
+
+<div class="col-md-6 col-xl-4">
+<form>
+<input type="checkbox" name="widget1" value="Map">
+
+</div>
+<div class="col-md-6 col-xl-4">
+
+
+</div>
+<button type="submit" class="butn">Submit</button>
+<!-- end 2nd row -->
+</div>
 
 
                         
