@@ -7,6 +7,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
 }
+
+include 'config.php';
 ?>
 
 
@@ -83,17 +85,40 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <div class="d-flex flex-column">
                             <div class="p-2">
                                 <div class="d-flex flex-row mx-2 mb-5">
-                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
-                                    <div class="p-2 flex-fill dashed mx-2"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
-                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed">
+                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
+                                    </div>
+                                    <div class="p-2 flex-fill dashed mx-2">
+                                        <?php
+                                            $sql = "SELECT count(price) as total_price from order_detail";
+                                            if($result = mysqli_query($link,$sql)) {
+                                                while($row = mysqli_fetch_assoc($result)) {
+                                                    echo $row['isFinance']. "FINANCE";
+                                                }
+                                            }
+                                            if ($result->num_rows ===0) {
+                                                echo"Nothing has been selected";
+                                            }
+                                            
+                                        ?>
+                                    </div>
+                                    <div class="p-2 flex-fill dashed">
+                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
+                                    </div>
                                 </div>
 
                             </div>
                             <div class="p-2">
                                 <div class="d-flex flex-row mx-2">
-                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
-                                    <div class="p-2 flex-fill dashed mx-2"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
-                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed">
+                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
+                                    </div>
+                                    <div class="p-2 flex-fill dashed mx-2">
+                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
+                                    </div>
+                                    <div class="p-2 flex-fill dashed">
+                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
