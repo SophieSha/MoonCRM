@@ -79,7 +79,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
 
-                <h1>User card selection</h1>
+                <h3>User card selection</h3>
                 <p>Select cards to be displayed on user</p>
 
                 <?php
