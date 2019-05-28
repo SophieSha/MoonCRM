@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
-
+require_once 'config.php';
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -79,9 +79,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
 
+                <h3>User card selection</h3>
+                <p>Select cards to be displayed on user</p>
 
+                <?php
+                    $sql = 'select * from card';
+                    $cards = $link->query($sql);
 
-
+                    foreach($cards as $card){
+                        include 'layouts/adminCard.php';
+                    }
+                ?>
 
 
 
