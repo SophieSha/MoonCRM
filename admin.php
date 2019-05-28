@@ -71,20 +71,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <!-- ==================
                          PAGE CONTENT START
                          ================== -->
-                <h1> Admin</h1>
-                <p>Card selection</p>
-                <?php
-                $stmt = $conn->prepare('select * from card');
-                $stmt->execute();
-                $cards = $stmt->fetchAll();
 
-                foreach ($cards as $card) {
-                    include 'layouts/adminCard.php';
-                }
-                ?>
+
                 <div class="page-content-wrapper">
 
                     <div class="container-fluid">
+
+
+
+
+
+
+
+
+
 
 
                     </div><!-- container -->
