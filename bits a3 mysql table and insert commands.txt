@@ -1,0 +1,44 @@
+CREATE TABLE customer
+(
+	cust_no 	INT(10)		AUTO_INCREMENT,
+	first_name 	VARCHAR(50) NOT NULL,
+	last_name	VARCHAR(50)	NOT NULL,
+	email 		VARCHAR(50)	NOT NULL,
+	phone 		VARCHAR(50)	,
+	address		VARCHAR(50)	,
+	city		VARCHAR(50)	,
+	postcode	VARCHAR(50)	,
+	country		VARCHAR(50)	,
+	PRIMARY KEY (cust_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (1, 'Luke', 'Tedlow', 'rad_dude@gmail.com',  '(784) 3285-4732', '2716 Nelm Street', 'Saint Louis', '63101', 'United States');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (2, 'Kyle', 'Mercer', 'K_Mercer@hotmail.com', '(1800) 6674 549', '481 Bridge Avenue', 'Lake Charles', '70601', 'United States');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (3, 'Mollie', 'Fisk', 'pink_rock@yahoo.com', '220 - 9977862', '88 Jane Bell Lane', 'Melbourne', '3000', 'Australia');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (4, 'Raphael', 'Burrey', 'raphael81@hotmail.com', '(617) 780-2729', '1229 Hillcrest Lane', 'Irvine', '92714', 'United States');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (5, 'Ava', 'Fusaro', 'AF_W@gmail.com', '(517) 652-6266', '16 Wagga Road', 'Yathella', '2650', 'Australia');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (6, 'Laurence', 'Galantino', 'potato_is_life@gmail.com', '(201) 3268-5131', '83 Taylor Street', 'Invergordon South', '3634', 'Australia');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (7, 'Mike', 'Zanger', 'Mzanger@hotmail.com', '(893) 642-9985', '70 Armstrong Street', 'Macorna North', '3568', 'Australia');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (8, 'Eleanor', 'Kovaks', 'Elly_Kovaks@hotmail.com', '469 585 7125', '86 Ross Street', 'Numinbah Valley', '4211', 'Australia');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (9, 'Liam', 'Talbott', 'abigbutt@gmail.com', '63 7878 2634', '2258 Cherry Ridge Drive', 'New Orleans', '70166', 'United States');
+
+INSERT INTO customer (cust_no, first_name, last_name, email, phone, address, city, postcode, country)
+VALUES (10, 'Melissa', 'Grefter', 'Melly_G@gmail.com', '(957) 344-1738', '22 Barker Street', 'Tenterden', '6322', 'Australia');
