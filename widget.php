@@ -7,6 +7,31 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
 }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mooncrm";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// $sql = "INSERT INTO widgets (widgetcode)
+// VALUES ()";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+// } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
+
+// $conn->close();
+
+
 ?>
 
 
