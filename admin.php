@@ -99,6 +99,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </div> <!-- Page content Wrapper -->
             </div> <!-- content -->
             <?php include 'layouts/footer.php'; ?>
+
+
         </div>
         <!-- End Right content here -->
     </div>

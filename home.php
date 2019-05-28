@@ -30,6 +30,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="public/assets/css/custom.css">
 
     <!-- extising css -->
     <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -77,7 +78,25 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
                     <div class="container-fluid">
 
+                        <h1>Dashboard</h1>
 
+                        <div class="d-flex flex-column">
+                            <div class="p-2">
+                                <div class="d-flex flex-row mx-2 mb-5">
+                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed mx-2"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                </div>
+
+                            </div>
+                            <div class="p-2">
+                                <div class="d-flex flex-row mx-2">
+                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed mx-2"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                    <div class="p-2 flex-fill dashed"><p class="text-center d-inline-block align-middle">No card has been selected</p></div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
