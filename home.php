@@ -88,20 +88,24 @@ include 'config.php';
                                     <div class="p-2 flex-fill dashed">
                                         <p class="text-center d-inline-block align-middle">
                                             <?php
-                                                $result3 = mysqli_query($link,"SELECT department_name FROM department");
+                                                $query = mysqli_real_escape_string($link,"SELECT * from users inner join department on users.department_id=department.department_id");
+                                                $result3 = mysqli_query($link, $query);
                                                 $rows3 = mysqli_fetch_all($result3,MYSQLI_ASSOC);
 
-                                                foreach ($rows3 as $dept) {
-                                                    if ($dept['department_name'] == "Finance") {
-                                                        echo "Finance Widget goes here";
+                                                foreach ($rows3 as $user) {
+
+                                                        if ($user['department_name'] == "Finance") {
+                                                            echo "Finance Widget goes here";
+                                                        }
+                                                        if ($user['department_name'] == "Sales") {
+                                                            include 'layouts/sales_target.php';
+                                                        }
+                                                        if ($user['department_name'] == "Marketing") {
+                                                            echo "Marketing Widget goes here";
+                                                        }
+                                                     
                                                     }
-                                                    if ($dept['department_name'] == "Sales") {
-                                                        echo "Sales Widget goes here";
-                                                    }
-                                                    if ($dept['department_name'] == "Marketing") {
-                                                        echo "Marketing Widget goes here";
-                                                    }
-                                                }
+               
                                             ?>
                                         </p>
                                     </div>

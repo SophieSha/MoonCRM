@@ -39,21 +39,27 @@
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="sales" <?php if (isset($_POST['selected']) and array_search("sales", $_POST['selected']) !== FALSE) {echo "checked";} ?>>
+                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="sales" <?php if (isset($_POST['selected']) and array_search("sales", $_POST['selected']) !== false) {
+    echo "checked";
+} ?>>
                                 Sales
                             </label>
                         </div>
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="marketing" <?php if (isset($_POST['selected']) and array_search("marketing", $_POST['selected']) !== FALSE) {echo "checked";} ?>>
+                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="marketing" <?php if (isset($_POST['selected']) and array_search("marketing", $_POST['selected']) !== false) {
+    echo "checked";
+} ?>>
                                 Marketing
                             </label>
                         </div>
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="finance" <?php if (isset($_POST['selected']) and array_search("finance", $_POST['selected']) !== FALSE) {echo "checked";} ?>>
+                                <input type="checkbox" class="form-check-input" name="selected[]" id="" value="finance" <?php if (isset($_POST['selected']) and array_search("finance", $_POST['selected']) !== false) {
+    echo "checked";
+} ?>>
                                 Finance
                             </label>
                         </div>
@@ -88,19 +94,19 @@
         $salesSet = 0;
         $marketingSet = 0;
 
-        if (array_search("sales", $selected_options) !== FALSE) {
+        if (array_search("sales", $selected_options) !== false) {
             $salesSet = 1;
         } else {
             $salesSet = 0;
         }
 
-        if (array_search("marketing", $selected_options) !== FALSE) {
+        if (array_search("marketing", $selected_options) !== false) {
             $marketingSet = 1;
         } else {
             $marketingSet = 0;
         }
 
-        if (array_search("finance", $selected_options) !== FALSE) {
+        if (array_search("finance", $selected_options) !== false) {
             $financeSet = 1;
         } else {
             $financeSet = 0;
@@ -108,9 +114,7 @@
 
         $sql2 = "UPDATE card SET isFinance=$financeSet,isSales=$salesSet, isMarketing=$marketingSet WHERE card_id=1";
         $link->query($sql2);
-        }
-
-        else {
+    } else {
             $sql2 = "UPDATE card SET isFinance=0,isSales=0, isMarketing=0 WHERE card_id=1";
             $link->query($sql2);
         }
