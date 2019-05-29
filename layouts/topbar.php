@@ -11,6 +11,13 @@
         background-color: #f5f5f5;
     }
 
+    .btn {
+        color: #707070;
+        font-size: 1.5rem;
+        padding: 0;
+        line-height: 0;
+
+    }
 
     .notification-list .noti-icon-badge {
         display: inline-block;
@@ -93,9 +100,7 @@
                 <input type="text" class="form-control  float-left" placeholder="Search...">
             </li>
             <li class="list-inline-item">
-                
-                <button class="input-group-btn btn btn-default mb-4" 
-                style="color: #707070; font-size: 1.5rem; padding: 0; line-height: 0;" type="button" aria-label="Search">
+                <button class="input-group-btn btn btn-default mb-4" type="button" aria-label="Search">
                     <i class="mdi mdi-magnify" aria-hidden="true"></i>
                 </button>
             </li>
