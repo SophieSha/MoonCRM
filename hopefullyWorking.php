@@ -13,8 +13,10 @@ $resultE = mysqli_query("SELECT * FROM $table_name");
 if (!$resultE) die("Couldn't fetch records");
 $num_fields = mysql_num_fields($resultE);
 $headers = array();
+
+
 for ($i = 0; $i < $num_fields; $i++) {
-    $headers[] = mysql_field_name($resultE , $i);
+    $headers[] = mysqli_fetch_field($resultE , $i);
 }
 
 if ($fp && $resultE) {

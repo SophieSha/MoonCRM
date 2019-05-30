@@ -207,9 +207,9 @@ if (isset($_POST['submit']))
                         <!-- ==================
                          displays existing data from mysql						 
                          ================== -->
-<form method="post" action="export.php">
+<!-- <form method="post" action="export.php">
      <input type="submit" name="export" class="btn btn-success" value="Export" />
-    </form>
+    </form> -->
                             <!-- <form method="post" action="export.php" align="center">  
                             <input type="submit" name="export" value="CSV Export" class="btn btn-success" />  
                             </form>   -->
