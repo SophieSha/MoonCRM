@@ -80,7 +80,7 @@ include 'config.php';
 
                     <div class="container-fluid">
 
-                        <h1>Dashboard</h1>
+                        <h3>Dashboard</h3>
 
                         <div class="d-flex flex-column">
                             <div class="p-2">

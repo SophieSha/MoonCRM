@@ -24,7 +24,25 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
 
+
+
     <style type="text/css">
+        .butn {
+            -webkit-border-radius: 6 !important;
+            -moz-border-radius: 6 !important;
+            border-radius: 6px;
+            font-family: Roboto;
+            background: #d9d9d9 !important;
+            color: #555 !important;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .butn:hover {
+            background: #bbb !important;
+        }
+
         /* Remove margins and padding from the list */
         ul.todolist {
             list-style-type: none;
@@ -50,7 +68,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
         /* Set all odd list items to a different color (zebra-stripes) */
         ul.todolist li:nth-child(odd) {
-            background: #f9f9f9;
+            background: #f9f9f9 !important;
         }
 
         /* When clicked on, add a background color and strike out text */
@@ -132,7 +150,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         }
     </style>
 
-
     <!-- logo pic -->
     <link rel="shortcut icon" href="image/mooncrm-Logo.PNG">
 
@@ -189,22 +206,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <div class="container-fluid">
 
 
-
+                        <h3>Widget Selection</h3>
 
                         <div class="row">
 
                             <div class="col-md-6 col-xl-4">
                                 <div class="mini-stat clearfix bg-white" style=" height: 480px">
-                                        <div class="gmap_canvas"><iframe width="400" height="420" id="gmap_canvas" src="https://maps.google.com/maps?q=Melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div>
-                                        <style>
-                                            .gmap_canvas {
-                                                overflow: hidden;
-                                                text-align: center;
-                                                background: none !important;
-                                                height: 420px;
-                                                width: 315px;
-                                            }
-                                        </style>
+                                    <div class="gmap_canvas"><iframe width="400" height="420" id="gmap_canvas" src="https://maps.google.com/maps?q=Melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div>
+                                    <style>
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            text-align: center;
+                                            background: none !important;
+                                            height: 420px;
+                                            width: 315px;
+                                        }
+                                    </style>
                                 </div>
                             </div>
 
@@ -245,6 +262,47 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
                         </div>
                         <!-- end first row -->
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-xl-4">
+                                <form class="widgetcheck">
+                                    <input type="checkbox" name="widget1" value="Map">
+                                </form>
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+                                <form>
+                                    <input type="checkbox" name="widget1" value="Map">
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+                                <form>
+                                    <input type="checkbox" name="widget1" value="Map">
+                            </div>
+
+                        </div>
+                        <!-- end checkbox row -->
+
+                        
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6 col-xl-4">
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+
+                                <button type="submit" class="butn" style="float:right">Submit</button>
+                            </div>
+
+                        </div>
+
+                        <!-- end submitbutton row -->
+
 
 
 

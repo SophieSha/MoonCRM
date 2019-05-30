@@ -122,9 +122,6 @@ if (isset($_POST['submit']))
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css">
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="css/custom.css">
-
     <!-- extising css -->
     <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="public/assets/css/style.css" rel="stylesheet" type="text/css" />

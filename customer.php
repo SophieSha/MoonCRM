@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
     <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="public/assets/css/style.css" rel="stylesheet" type="text/css" />
 
-    
+
 
 
     <!-- Page specific css/style, it has more priority than other linked css, if you have a few small 
@@ -166,7 +166,7 @@ if (isset($_POST['submit'])) {
                 </br>
                 </br>
 
-                <h3>Import CSV File</h3>
+                <h3>Customer</h3>
                 <form action='<?php echo $_SERVER["PHP_SELF"]; ?>' method='post' enctype="multipart/form-data">
                     Import File : <input type='file' name='customer' size='20'>
                     <input type='submit' name='submit' value='submit'>
@@ -176,6 +176,7 @@ if (isset($_POST['submit'])) {
                 <!-- ==================
                          this will be the export function						 
                          ================== -->
+
 
                 <?php
                 // THIS IS FOR EXPORT MAYBE
@@ -202,9 +203,13 @@ if (isset($_POST['submit'])) {
                 <!-- ==================
                          displays existing data from mysql						 
                          ================== -->
-                <form method="post" action="export.php">
-                    <input type="submit" name="export" class="btn btn-success" value="Export" />
-                </form>
+                <!-- <form method="post" action="export.php">
+     <input type="submit" name="export" class="btn btn-success" value="Export" />
+    </form> 
+
+NEED TO GET RID OF THIS CODE OR ALTER IT TO MAKE THAT EXPORT BUTTON-->
+
+
                 <!-- <form method="post" action="export.php" align="center">  
                             <input type="submit" name="export" value="CSV Export" class="btn btn-success" />  
                             </form>   -->
@@ -251,39 +256,47 @@ if (isset($_POST['submit'])) {
 
 
                     <!-- export button referecing to hopefullyWorking.php -->
-                    <a href="hopefullyWorking.php" target="_blank">Download customer data</a>
+
+                    <!-- <a href="hopefullyWorking.php" target="_blank">Download customer data</a> -->
 
 
-                    <!-- <input type="submit" name="dbToCSV" value="Export Database to CSV" <?php if (isset($_GET['dbToCSV'])) {
-                                                                                                $SEquery = "SELECT * FROM customer";
-                                                                                                $resultE = mysqli_query($con, $SEquery);
+                    <button type="button" data-toggle="modal" data-target="#<?php echo $msg_id = $data['msg_id']; ?>" title="Comment"> <a href="hopefullyWorking.php" target="_blank">Export customer data</a></button>
 
-                                                                                                $number_of_fields = mysqli_num_fields($resultE);
-                                                                                                $headers = array();
-                                                                                                for ($i = 0; $i < $number_of_fields; $i++) {
-                                                                                                    $headers[] = mysqli_field_name($resultE, $i);
-                                                                                                }
-                                                                                                $fp = fopen('php://output', 'w');
-                                                                                                if ($fp && $resultE) {
-                                                                                                    header('Content-Type: text/csv');
-                                                                                                    header('Content-Disposition: attachment; filename="export.csv"');
-                                                                                                    header('Pragma: no-cache');
-                                                                                                    header('Expires: 0');
-                                                                                                    fputcsv($fp, $headers);
-                                                                                                    while ($row = $resultE->fetch_array(MYSQLI_NUM)) {
-                                                                                                        fputcsv($fp, array_values($row));
-                                                                                                    }
-                                                                                                    die;
-                                                                                                }
 
-                                                                                                function mysqli_field_name($resultE, $field_offset)
-                                                                                                {
-                                                                                                    $properties = mysqli_fetch_field_direct($resultE, $field_offset);
-                                                                                                    return is_object($properties) ? $properties->name : null;
-                                                                                                }
-                                                                                            } else {
-                                                                                                echo "Error!";
-                                                                                            } ?>><br /> -->
+
+                    <!-- <input type="submit" name="dbToCSV" value="Export Database to CSV" 
+                    <?php if (isset($_GET['dbToCSV'])) {
+                        $SEquery = "SELECT * FROM customer";
+                        $resultE = mysqli_query($con, $SEquery);
+
+                        $number_of_fields = mysqli_num_fields($resultE);
+                        $headers = array();
+                        for ($i = 0; $i < $number_of_fields; $i++) {
+                            $headers[] = mysqli_field_name($resultE, $i);
+                        }
+                        $fp = fopen('php://output', 'w');
+                        if ($fp && $resultE) {
+                            header('Content-Type: text/csv');
+                            header('Content-Disposition: attachment; filename="export.csv"');
+                            header('Pragma: no-cache');
+                            header('Expires: 0');
+                            fputcsv($fp, $headers);
+                            while ($row = $resultE->fetch_array(MYSQLI_NUM)) {
+                                fputcsv($fp, array_values($row));
+                            }
+                            die;
+                        }
+
+                        function mysqli_field_name($resultE, $field_offset)
+                        {
+                            $properties = mysqli_fetch_field_direct($resultE, $field_offset);
+                            return is_object($properties) ? $properties->name : null;
+                        }
+                    } else {
+                        echo "Error!";
+                    } ?>><br /> -->
+
+
 
 
 
