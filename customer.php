@@ -169,7 +169,7 @@ if (isset($_POST['submit']))
                          this will be the import function						 
                          ================== -->
                             </br>
-							<h1>Import CSV File</h1>
+							<h1>Customer</h1>
 							<form action='<?php echo $_SERVER["PHP_SELF"];?>'
 							method='post'
 							enctype="multipart/form-data">
@@ -182,6 +182,11 @@ if (isset($_POST['submit']))
                          this will be the export function						 
                          ================== -->
                             
+<button type="button" data-toggle="modal" data-target="#<?php echo $msg_id=$data['msg_id'];?>" title="Comment"> <a href="hopefullyWorking.php" target="_blank">Export Data</a></button>
+
+
+
+
                         <?php
                          // THIS IS FOR EXPORT MAYBE
 
@@ -209,7 +214,11 @@ if (isset($_POST['submit']))
                          ================== -->
 <!-- <form method="post" action="export.php">
      <input type="submit" name="export" class="btn btn-success" value="Export" />
-    </form> -->
+    </form> 
+
+NEED TO GET RID OF THIS CODE OR ALTER IT TO MAKE THAT EXPORT BUTTON-->
+
+
                             <!-- <form method="post" action="export.php" align="center">  
                             <input type="submit" name="export" value="CSV Export" class="btn btn-success" />  
                             </form>   -->
@@ -258,7 +267,12 @@ if (isset($_POST['submit']))
 
                      
                     <!-- export button referecing to hopefullyWorking.php -->
-                     <a href="hopefullyWorking.php" target="_blank">Download customer data</a>
+
+                     <!-- <a href="hopefullyWorking.php" target="_blank">Download customer data</a> -->
+
+
+                    <button type="button" data-toggle="modal" data-target="#<?php echo $msg_id=$data['msg_id'];?>" title="Comment"> <a href="hopefullyWorking.php" target="_blank">Download customer data</a></button>
+
 
 
                      <!-- <input type="submit" name="dbToCSV" value="Export Database to CSV" <?php if     (isset($_GET['dbToCSV']))
