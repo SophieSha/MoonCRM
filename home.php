@@ -27,11 +27,11 @@ include 'config.php';
     <!-- logo pic -->
     <link rel="shortcut icon" href="image/mooncrm-Logo.PNG">
 
-
     <!-- linked css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- extising css -->
@@ -40,7 +40,6 @@ include 'config.php';
 
     <!-- custom css -->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
-
 
     <!-- Page specific css/style, it has more priority than other linked css, if you have a few small 
     page specific styles you can add them here-->
@@ -80,51 +79,26 @@ include 'config.php';
 
                     <div class="container-fluid">
 
-                        <h3>Dashboard</h3>
-
+                        <h3 class="mb-5">Dashboard</h3>
+                        <h4 class ="mb-3">Team Goals</h4>
                         <div class="d-flex flex-column">
                             <div class="p-2">
                                 <div class="d-flex flex-row mx-2 mb-5">
-                                    <div class="p-2 flex-fill dashed">
-                                        <p class="text-center d-inline-block align-middle">
-                                            <?php
-                                                $result3 = mysqli_query($link,"SELECT department_name FROM department");
-                                                $rows3 = mysqli_fetch_all($result3,MYSQLI_ASSOC);
-
-                                                foreach ($rows3 as $dept) {
-                                                    if ($dept['department_name'] == "Finance") {
-                                                        echo "Finance Widget goes here";
-                                                    }
-                                                    if ($dept['department_name'] == "Sales") {
-                                                        echo "Sales Widget goes here";
-                                                    }
-                                                    if ($dept['department_name'] == "Marketing") {
-                                                        echo "Marketing Widget goes here";
-                                                    }
-                                                }
-                                            ?>
-                                        </p>
-                                    </div>
-                                    <div class="p-2 flex-fill dashed mx-2">
-
-                                    </div>
-                                    <div class="p-2 flex-fill dashed">
-                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
-                                    </div>
+                                    <?php
+                                        include 'components/incomingPmts.php';
+                                        include 'components/webHits.php';
+                                        include 'components/salesCard.php';
+                                    ?>
                                 </div>
-
                             </div>
+
                             <div class="p-2">
+                                <h4 class ="mb-3">User Widgets</h4>
                                 <div class="d-flex flex-row mx-2">
-                                    <div class="p-2 flex-fill dashed">
-                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
-                                    </div>
-                                    <div class="p-2 flex-fill dashed mx-2">
-                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
-                                    </div>
-                                    <div class="p-2 flex-fill dashed">
-                                        <p class="text-center d-inline-block align-middle">No card has been selected</p>
-                                    </div>
+                                    <?php
+                                        include 'components/upcoming.php';
+                                        include 'components/calendar.php';
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -154,8 +128,11 @@ include 'config.php';
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 
 
     <script src="public/assets/js/modernizr.min.js"></script>
@@ -164,6 +141,9 @@ include 'config.php';
     <script src="public/assets/js/jquery.scrollTo.min.js"></script>
     <script src="public/assets/pages/dashboard.js"></script>
     <script src="public/assets/js/app.js"></script>
+
+
+    <!-- Calendar JS -->
 
 
     <!-- Add Extra JS below-->

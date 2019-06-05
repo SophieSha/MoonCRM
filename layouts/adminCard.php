@@ -81,6 +81,7 @@
         SQL statement is then sent to the sever and executed
      -->
     <?php
+
     if (isset($_POST['selected'])) {
         $selected_options = $_POST['selected'];
 
